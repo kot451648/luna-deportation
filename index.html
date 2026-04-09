@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>⚖️ ПОВЕСТКА № ХЗ-2026-BUIO ⚖️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #0a0f2a 0%, #000000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', 'VT323', monospace;
+            padding: 20px;
+        }
+
+        .crt::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0,255,0,0.03) 0px, rgba(0,255,0,0.03) 2px, transparent 2px, transparent 6px);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            border: 3px solid #ff3a3a;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.4), inset 0 0 20px rgba(255,0,0,0.2);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(2px);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .stamp {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1rem;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            padding: 5px 12px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            background: rgba(0,0,0,0.7);
+            letter-spacing: 2px;
+            z-index: 5;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #ff4444;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px red;
+            border-bottom: 1px dashed #ff4444;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .court-text {
+            color: #ffaaaa;
+            font-size: 1rem;
+            margin: 20px 0;
+            background: #110000;
+            padding: 15px;
+            border-left: 5px solid red;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .timer-box {
+            background: #000000aa;
+            border: 1px solid #ff6666;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .timer-label {
+            color: #ff8888;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        
+        .timer {
+            font-size: 3.5rem;
+            font-weight: bold;
+            font-family: monospace;
+            color: #ff2222;
+            background: black;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 15px 0;
+            letter-spacing: 5px;
+            border-radius: 8px;
+            text-shadow: 0 0 8px red;
+        }
+        
+        .small-note {
+            color: #aa5555;
+            font-size: 0.7rem;
+        }
+
+        .video-block {
+            display: none;
+            margin: 20px 0;
+        }
+        
+        .video-block video {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            background: black;
+            border: 3px solid #ff4444;
+            box-shadow: 0 0 30px rgba(255,0,0,0.5);
+            border-radius: 8px;
+        }
+
+        .decree {
+            background: #1a0000;
+            padding: 15px;
+            margin-top: 20px;
+            color: #ff7777;
+            font-size: 1rem;
+            text-align: left;
+            border-top: 2px solid red;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.7rem;
+            color: #663333;
+        }
+
+        button {
+            background: none;
+            border: 1px solid red;
+            color: red;
+            padding: 5px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-family: monospace;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background: red;
+            color: black;
+            box-shadow: 0 0 10px red;
+        }
+
+        .telegram-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff4444;
+            background: #2a2a2a;
+            padding: 8px 15px;
+            text-decoration: none;
+            border: 1px solid #ff4444;
+            transition: all 0.3s;
+        }
+        
+        .telegram-link:hover {
+            background: #ff4444;
+            color: black;
+            box-shadow: 0 0 10px red;
+        }
+
+        @media (max-width: 600px) {
+            .timer { font-size: 2rem; letter-spacing: 2px; }
+            h1 { font-size: 1.1rem; }
+            .court-text { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body class="crt">
+    <div class="container">
+        <div class="stamp">⚡ СЕКРЕТНО ⚡</div>
+        <h1>⚖️ ПОВЕСТКА № ХЗ-2026-BUIO ⚖️</h1>
+        
+        <div class="court-text">
+            Вам вынесен вердикт интернет-суда присяжных (кот КОТАКБАС, два Первоклассника).
+        </div>
+
+        <div id="countdownBlock">
+            <div class="timer-box">
+                <div class="timer-label">⏳ ДО ПРИВЕДЕНИЯ ПРИГОВОРА В ИСПОЛНЕНИЕ ОСТАЛОСЬ ⏳</div>
+                <div class="timer" id="timer">--:--:--:--</div>
+                <div class="small-note">❗ 12.04.2026 / 12:00:00 МСК — АКТИВАЦИЯ ДЕПОРТАЦИИ ❗</div>
+            </div>
+            <div class="small-note" style="margin-top: -10px;">* Московское время. При попытке скрыться — немедленная высылка на Фобос.</div>
+        </div>
+
+        <div id="executionBlock" class="video-block">
+            <div style="background: #000; padding: 5px; display: inline-block; margin-bottom: 15px;">
+                <span style="color:red;">🔴 ЗАПИСЬ КАМЕРЫ НАБЛЮДЕНИЯ ЦУП 🔴</span>
+            </div>
+            
+            <!-- ВИДЕО С ВАШЕГО КОМПЬЮТЕРА (файл video.mp4 в той же папке) -->
+            <video id="launchVideo" controls autoplay>
+                <source src="video.mp4" type="video/mp4">
+                Твой браузер не поддерживает видео
+            </video>
+            
+            <div class="decree">
+                <p>🔻 <strong>РЕШЕНИЕ:</strong> 🔻</p>
+                <p>За нарушение статьи 67.67 («Кибер-Бабулинг») и пункта 9.2 («Подозрительное использование аккаунта в MAX») — вы <strong>ЗАПРЕЩЕНЫ</strong> на территории Земли.</p>
+                <p>🚀 Роскосмос выделил тазик. Пункт сбора: ваш туалет. Время отправки: 12.04.26 в 12:00 МСК.</p>
+                <p>🌕 Пункт назначения: Луна, кратер «67», район вечной памяти робоксу.</p>
+                <p style="margin-top: 15px;">🌕 Удачи! 🌕</p>
+            </div>
+            <button onclick="this.style.display='none';">✖ Смириться с приговором ✖</button>
+        </div>
+        <div class="footer">
+            🔒 Документ сгенерирован блокчейном РКН. Подделка карается высадкой на Юпитер.
+        </div>
+    </div>
+
+    <script>
+        // ДАТА: 12 апреля 2026 года, 12:00 по МОСКВЕ
+        function getTargetTimestamp() {
+            const targetDate = new Date(2026, 3, 12, 12, 0, 0);
+            const localOffset = targetDate.getTimezoneOffset();
+            const mskOffset = -180;
+            const correctedTarget = new Date(targetDate.getTime() + (localOffset - mskOffset) * 60000);
+            return correctedTarget.getTime();
+        }
+
+        const DEPORTATION_TIME = getTargetTimestamp();
+        let timerInterval;
+        let isExecuted = false;
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = DEPORTATION_TIME - now;
+
+            if (distance <= 0 && !isExecuted) {
+                clearInterval(timerInterval);
+                document.getElementById('countdownBlock').style.display = 'none';
+                const execBlock = document.getElementById('executionBlock');
+                execBlock.style.display = 'block';
+                
+                // Запускаем видео
+                const video = document.getElementById('launchVideo');
+                if (video) {
+                    video.play();
+                }
+                isExecuted = true;
+                
+                const container = document.querySelector('.container');
+                const oldH1 = document.querySelector('h1');
+                if(oldH1) oldH1.style.textShadow = "0 0 15px red, 0 0 30px orange";
+                
+                return;
+            }
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('timer').innerHTML = 
+                    `${days}д ${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+            } else {
+                if(!isExecuted){
+                    document.getElementById('timer').innerHTML = `00д 00:00:00`;
+                }
+            }
+        }
+
+        function initialCheck() {
+            const now = new Date().getTime();
+            if (now >= DEPORTATION_TIME) {
+                document.getElementById('countdownBlock').style.display = 'none';
+                document.getElementById('executionBlock').style.display = 'block';
+                isExecuted = true;
+                return true;
+            }
+            return false;
+        }
+
+        if (!initialCheck()) {
+            timerInterval = setInterval(updateTimer, 500);
+            updateTimer();
+        } else {
+            document.getElementById('executionBlock').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
